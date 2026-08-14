@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artificial Intelligence and Cloud-Based Collaborative Platform for Plant Disease Identification, Tracking, and Forecasting for Farmers</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: url("{{ url_for('static', filename='inp.png') }}") no-repeat center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+
+        /* Dark overlay */
+        body::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.65);
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            width: 90%;
+            max-width: 900px;
+            padding: 50px 40px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1.2s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 34px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 span {
+            color: #4CAF50;
+        }
+
+        p {
+            font-size: 18px;
+            color: #e0e0e0;
+            margin-bottom: 40px;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        /* Advanced button */
+        .btn {
+            position: relative;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .btn::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, #4CAF50, #2ecc71);
+            z-index: -1;
+            transition: transform 0.4s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(76, 175, 80, 0.5);
+        }
+
+        .btn span {
+            margin-right: 8px;
+        }
+
+        /* Sign out button */
+        .signout {
+            margin-top: 45px;
+            display: inline-block;
+            padding: 14px 32px;
+            font-size: 17px;
+            font-weight: 600;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            background: linear-gradient(120deg, #ff4b2b, #ff416c);
+            transition: all 0.4s ease;
+        }
+
+        .signout:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(255, 65, 108, 0.5);
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🧬 <span>Plant Disease Identification, Tracking, and Forecasting for Farmers</h1>
+        <p>Artificial Intelligence and Cloud-Based Collaborative Platform for Plant Disease Identification, Tracking, and Forecasting for Farmers</p>
+
+        <div class="nav">
+            <a href="/detection" class="btn">
+                <span>🔍</span> Start Detection
+            </a>
+        </div>
+
+        <a href="/signin" class="signout">🚪 Sign Out</a>
+
+        <footer>
+            © 2025 • Deep Learning Healthcare System 🏥
+        </footer>
+    </div>
+</body>
+</html>

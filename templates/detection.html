@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artificial Intelligence and Cloud-Based Collaborative Platform for Plant Disease Identification, Tracking, and Forecasting for Farmers</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background-color: #1a1a2e; /* Solid dark color background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            width: 95%;
+            max-width: 850px;
+            padding: 45px;
+            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(14px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+            animation: fadeUp 1s ease;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #FFD700;
+        }
+
+        p.subtitle {
+            font-size: 18px;
+            color: #e0e0e0;
+            margin-bottom: 35px;
+        }
+
+        /* Upload box */
+        .upload-box {
+            border: 2px dashed #FFD700;
+            padding: 30px;
+            border-radius: 16px;
+            background: rgba(0, 0, 0, 0.4);
+            margin-bottom: 25px;
+        }
+
+        input[type="file"] {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+
+        /* Detect button */
+        .detect-btn {
+            width: 100%;
+            margin-top: 20px;
+            padding: 16px;
+            font-size: 20px;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            color: #222;
+            background: linear-gradient(120deg, #FFD700, #FFA500);
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .detect-btn:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 15px 35px rgba(255, 215, 0, 0.6);
+        }
+
+        /* Result card */
+        .result {
+            margin-top: 35px;
+            padding: 30px;
+            border-radius: 18px;
+            background: rgba(0, 0, 0, 0.6);
+            animation: fadeUp 0.8s ease;
+        }
+
+        .result h2 {
+            font-size: 26px;
+            color: #ADFF2F;
+            margin-bottom: 15px;
+        }
+
+        .suggestion {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            font-size: 17px;
+            color: #FFD700;
+            white-space: pre-line;
+            margin-top: 15px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .image-container img {
+            width: 300px;
+            max-width: 100%;
+            border-radius: 16px;
+            border: 4px solid #FFD700;
+            box-shadow: 0 0 18px rgba(255, 215, 0, 0.6);
+            transition: transform 0.3s ease;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Back button */
+        .back-btn {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 14px 34px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(120deg, #ff416c, #ff4b2b);
+            transition: all 0.4s ease;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(255, 75, 43, 0.6);
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Artificial Intelligence and Cloud-Based Collaborative Platform for Plant Disease Identification, Tracking, and Forecasting for Farmers</h1>
+        <p class="subtitle">Upload a plant image for AI-based analysis </p>
+
+        <form method="post" enctype="multipart/form-data">
+            <div class="upload-box">
+                <input type="file" name="image" required>
+            </div>
+
+            <button type="submit" class="detect-btn">
+                🔍 Analyze Image
+            </button>
+        </form>
+
+        {% if predicted_class %}
+        <div class="result">
+            <h2>✅ Prediction Result: {{ predicted_class }}</h2>
+            <div class="image-container">
+                <img src="{{ image_path }}" alt="Uploaded Image">
+            </div>
+            <div class="suggestion">
+                {{ suggestion_text }}
+            </div>
+        </div>
+        {% endif %}
+
+        <a href="/home" class="back-btn">🏠 Return to Home</a>
+    </div>
+</body>
+</html>

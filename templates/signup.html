@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📝 Sign Up</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: url("{{ url_for('static', filename='inp1.png') }}") no-repeat center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        /* Dark overlay */
+        body::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.65);
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            width: 380px;
+            padding: 40px 35px;
+            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(14px);
+            box-shadow: 0 25px 55px rgba(0, 0, 0, 0.6);
+            animation: slideUp 1s ease;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 30px;
+            font-weight: 700;
+            color: #ADFF2F;
+            margin-bottom: 25px;
+        }
+
+        /* Input group */
+        .input-group {
+            position: relative;
+            margin-bottom: 18px;
+        }
+
+        .input-group span {
+            position: absolute;
+            top: 50%;
+            left: 14px;
+            transform: translateY(-50%);
+            font-size: 18px;
+            color: #555;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 14px 14px 14px 42px;
+            font-size: 16px;
+            border-radius: 12px;
+            border: none;
+            outline: none;
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        /* Sign up button */
+        .signup-btn {
+            width: 100%;
+            margin-top: 10px;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            color: #222;
+            background: linear-gradient(120deg, #4CAF50, #2ecc71);
+            transition: all 0.4s ease;
+        }
+
+        .signup-btn:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 15px 35px rgba(46, 204, 113, 0.6);
+        }
+
+        .signin-link {
+            margin-top: 20px;
+            font-size: 15px;
+        }
+
+        .signin-link a {
+            color: #FFD700;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .signin-link a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 14px;
+            color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>✨ Create Account</h1>
+
+        <form method="post">
+            <div class="input-group">
+                <span>👤</span>
+                <input type="text" name="username" placeholder="Username" required>
+            </div>
+
+            <div class="input-group">
+                <span>🔒</span>
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+
+            <button type="submit" class="signup-btn">
+                🚀 Sign Up
+            </button>
+        </form>
+
+        <div class="signin-link">
+            Already have an account? <a href="/signin">🔐 Sign In</a>
+        </div>
+
+        <div class="footer">
+            Secure agriculturePlatform 🩺
+        </div>
+    </div>
+</body>
+</html>
